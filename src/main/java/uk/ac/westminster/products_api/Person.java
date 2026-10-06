@@ -32,6 +32,18 @@ public class Person {
         this.name = name;
     }
 
+
+
     // TODO (Activity 3): add the "email" field and its getter here.
+
+    private String email;
+
+    public String getEmail(){
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email= email;
+    }
+
 
 }
