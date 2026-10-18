@@ -5,37 +5,31 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 
-/**
- * Week 1 starter controller.
- * Already provided:
- *   GET /hello   -> a simple greeting
- *   GET /status  -> a simple status message
- * TODO (Lab Activity 3):
- *   Add a new endpoint GET /goodbye that returns the String
- *   "Goodbye from Spring Boot!"
- */
-
-
+// Tutorial 1
 @RestController
 public class HelloController {
 
+    // Activity 1
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to Products API";
+    }
+
+    // Activity 2
     @GetMapping("/hello")
-    public String hello(){
-        return "Hello from Spring Boots!";
+    public String hello() {
+        return "Hello from Spring Boot!";
     }
 
+    // Activity 3
     @GetMapping("/status")
-    public String status(){
-        return "API running -" + LocalDate.now().toString();
+    public String status() {
+        return "API running - " + LocalDate.now();
     }
 
-
-    // TODO (Activity 3): add your /goodbye endpoint here.
+    // Activity 4
     @GetMapping("/goodbye")
-    public String goodbye(){
-        return "Goodbye from Spring Boots!";
+    public String goodbye() {
+        return "Goodbye from Spring Boot!";
     }
-
-
-
 }
