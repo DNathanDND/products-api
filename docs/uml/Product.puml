@@ -14,6 +14,24 @@ class Product {
   + setPrice(price : double) : void
 }
 
+class DigitalProduct {
+  - downloadUrl : String
+  - fileSizeMB : double
+  + DigitalProduct()
+  + DigitalProduct(id : Long, name : String, price : double, downloadUrl : String, fileSizeMB : double)
+  + getDownloadUrl() : String
+  + getFileSizeMB() : double
+}
+
+class PhysicalProduct {
+  - weightKg : double
+  - dimensions : String
+  + PhysicalProduct()
+  + PhysicalProduct(id : Long, name : String, price : double, weightKg : double, dimensions : String)
+  + getWeightKg() : double
+  + getDimensions() : String
+}
+
 class ProductService {
   - products : List<Product>
   - nextId : Long
@@ -33,6 +51,8 @@ class ProductController {
   + search(name : String) : List<Product>
 }
 
+Product <|-- DigitalProduct
+Product <|-- PhysicalProduct
 ProductController ..> ProductService
 ProductService --> Product
 
